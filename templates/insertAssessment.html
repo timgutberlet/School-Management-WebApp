@@ -1,0 +1,41 @@
+{% include 'top.html' %}
+<div id="content">
+    <div id="container">
+        <h1 class="page-title">Insert an Assessment</h1>
+        <form class="pure-form pure-form-stacked login" method="POST">
+            <input name="id" placeholder="Assessment ID (Required)" required>
+            <input name="value" placeholder="Value in percent (Optional)">
+            <input name="type" placeholder="Type (Optional)">
+            <label for="dueDate">Choose a due-Date</label>
+            <input name="dueDate" type = "date" value="2022-10-21">
+            <label for="uos">Choose a Unit of Study</label>
+            <center>
+            <select name="uos">
+             {% for uos in uosList %}
+                <option value={{uos[0]}}>{{uos[0]}}</option>
+             {% endfor %}
+            </select>
+            </center>
+            <input type="submit">
+        </form>
+        <h1>Table for existing Assessments</h1>
+        <table class="pure-table">
+            <thead>
+                <tr><th>ID</th><th>Value</th><th>Type</th><th>Due-Date</th><th>uoSCode</th></tr>
+            </thead>
+            <tbody>
+                {% for assessment in assessments %}
+                    <tr>
+						<td> {{assessment[0]}}</td>
+                        <td> {{assessment[1]}} </td>
+                        <td> {{assessment[2]}} </td>
+                        <td> {{assessment[3]}} </td>
+                        <td> {{assessment[4]}} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

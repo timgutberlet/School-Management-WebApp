@@ -1,0 +1,112 @@
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22px;
+  line-height: 1.375rem;
+  color: #585858;
+  font-weight: 400;
+  background: #ffffff;
+}
+
+#top-unikey {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 20px;
+    color: #fff;
+    padding: .5em 1em;
+}
+
+ul.flashes {
+    margin:  0px;
+    padding: 10px;
+    background: #F44;
+    color: #FFF;
+    text-align: center;
+    list-style-type: none;
+}
+
+form.login {
+  width: 300px;
+  margin: 0 auto;
+}
+
+form.login input {
+  width: 100%;
+  height: 40px;
+}
+
+form.login button {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 40px;
+  background-color: #446CB3;
+}
+
+form.login h2 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.right {
+  position: absolute;
+  right: 10px;
+}
+
+.page-title {
+    text-align: center;
+}
+
+.pure-table {
+    margin: auto;
+}
+
+#header {
+  height: 60px;
+  padding: 10px 20px 10px 20px;
+  background-color: #446CB3;
+  vertical-align: center;
+}
+
+#header a {
+  color: white;
+  font-size: 18px;
+  font-family: Helvetica, sans-serif;
+}
+
+#header a:hover {
+  background-color: #4B77BE;
+}
+
+#container {
+  padding: 30px 50px 10px 50px;
+  text-align: center;
+}
+
+#container th {
+  background-color: #ECF0F1;
+}
+
+#container h2 {
+  font-size: 26px;
+  font-size: 1.625rem;
+  line-height: 32px;
+  line-height: 2rem;
+  margin-top: .4em;
+  margin-bottom: .3em;
+  color: #343434;
+  font-weight: 400;
+}
+
+.note {
+  text-align: center;
+  padding: 5px;
+  width: 80%;
+  box-sizing: border-box;
+  display: block;
+  margin: auto;
+}

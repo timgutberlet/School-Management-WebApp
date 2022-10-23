@@ -1,0 +1,28 @@
+{% include 'top.html' %}
+<div id="content">
+    <div id="container">
+        <h1 class="page-title">Insert a Lecture</h1>
+        <form class="pure-form pure-form-stacked login" method="POST">
+            <label for="uos">Choose a offered Unit of Study</label>
+            <center>
+            <select name="uos">
+             {% for uos in uosList %}
+                <option value={{uos}}>{{uos}}</option>
+             {% endfor %}
+            </select>
+            </center>
+            <input name="classTime" placeholder="ClassTime (Optional)">
+            <label for="classroomId">Choose a classroomId:</label>
+             <center>
+            <select name="classroomId">
+             {% for classroom in classroomList %}
+                <option value={{classroom[0]}}>{{classroom[0]}}</option>
+             {% endfor %}
+            </select>
+            </center>
+            <input type="submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% include 'top.html' %}
+    <div id="content">
+        <!--
+            Simple login form, the thing you want to pay attention to is
+            the method and the action, it shows you what's happening
+        -->
+
+        <small class="note">Note: We are making a fake "Uni Studnet" in our UNIDB. The login is the Student ID and the password from the database (Not your own student ID and password!)</small>
+        <form class="pure-form pure-form-stacked login" method="POST" action="{{ url_for('login') }}">
+            <h2>Log in</h2>
+			<h4>Note: In UniDB database try:<h4>
+			<code>SELECT * FROM unidb.student</code>
+			<h4>To get the SID and password<h4>
+            <input type="text" name="sid" placeholder="Fake Student ID" required>
+            <input type="password" name="password" placeholder="Password">
+            <input class="pure-button pure-button-primary" type="submit">
+        </form>
+    </div>
+</body>
+</html>

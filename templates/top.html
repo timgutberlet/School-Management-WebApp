@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- this goes to the 'static' folder and grabs our CSS -->
+        <!-- [Brief Intro:] CSS is how we make the websites look nicer -->
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/pure.css') }}">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/menu.css') }}">
+        <title>{{ page.title }}</title>
+    </head>
+    <body>
+        <!-- Generating the menu and what happens when the user is logged in VS logged out -->
+        <div id="header" class="pure-menu pure-menu-horizontal">
+            <a href="/" class="pure-menu-heading pure-menu-link">UniDB</a>
+            {% if session.logged_in %}
+            <ul id = "menu" class="pure-menu-list">
+                <li class="pure-menu-item"><a href="{{ url_for('list_units') }}" class="pure-menu-link">All Units</a></li>
+                <li class="pure-menu-item">
+                    <a href="{{ url_for('get_locations') }}" class="pure-menu-link">Location &#x25bd;</a>
+                    <ul>
+                        <li><a href="{{ url_for('get_locations') }}">List-Locations</a></li>
+                        <li><a href="{{ url_for('get_unitByTime') }}">Search-By-Time</a></li>
+                        <li><a href="{{ url_for('get_classesByRoom') }}">Classes-By-Room</a></li>
+                        <li><a href="{{ url_for('insertLecture') }}">Add-Lecture</a></li>
+                        <li><a href="{{ url_for('insertAssessment') }}">Add-Assessment</a></li>
+                    </ul>
+                </li>
+                
+                <li class="pure-menu-item"><a href="{{ url_for('logout')}}" class="pure-menu-link">Logout</a></li>
+            </ul>
+            {% endif %}
+            <div id="top-unikey">{{ page.unikey }}</div>
+        </div>
+        <!--
+            This is for our flashed messages
+            Whenever we use flash('message in here')
+            it will come out inside this list
+        -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
